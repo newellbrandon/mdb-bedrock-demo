@@ -240,10 +240,10 @@ mongosh "mongodb+srv://USERNAME:PASSWORD@CLUSTER.REGION.mongodb.net/"
 show dbs
 
 # Use specific database
-use your_database
+use bedrock_db
 
 # List collections
-show collections
+show test
 
 # Sample query
 db.your_collection.find().limit(5)
