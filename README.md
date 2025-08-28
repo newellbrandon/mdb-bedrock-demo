@@ -60,15 +60,56 @@ Here's an example chunk from your `bedrock_db.test` collection:
 
 ## 💡 **Real-World Example**
 
-**User Question**: *"What are my Medicare options?"*
+**User Question**: *"What are the financial benefits to Medicare?"*
 
 **Vector Search Process**:
 1. Question converted to vector embedding
 2. MongoDB Atlas Vector Search finds chunks with similar embeddings
-3. Retrieves chunks about "Original Medicare vs Medicare Advantage"
+3. Retrieves chunks about Medicare financial benefits, cost savings, and coverage options
 4. Bedrock generates response using retrieved context
 
-**Result**: Accurate, context-aware answer about Medicare paths, contact information, and available options.
+**Result**: Accurate, context-aware answer about Medicare financial benefits, cost structures, and savings opportunities.
+
+## 🚀 **Getting Started**
+
+1. **Setup Environment**: Follow the setup guide in `AGENTS.md`
+2. **Test Connection**: Verify MongoDB and AWS Bedrock connectivity
+3. **Run Demo**: Execute `python main.py` to test the integration
+
+## 🖥️ **How to Interact with the Application**
+
+### **Running the Application**
+```bash
+# Activate virtual environment
+source venv/bin/activate
+
+# Run the application
+python main.py
+```
+
+### **Interactive Experience**
+The application will guide you through several steps:
+
+1. **Configuration Validation**: Checks AWS credentials and Bedrock agent settings
+2. **Client Initialization**: Sets up AWS Bedrock Agent Runtime client
+3. **Question Input**: Prompts you to enter your question
+4. **Agent Processing**: Sends your question to the Bedrock agent
+5. **Response Display**: Shows the AI-generated answer
+
+### **Entering Your Question**
+When prompted, you can ask any question about your knowledge base. The application provides helpful examples:
+
+- **Preferred Query**: *"What are the financial benefits to Medicare?"*
+- **Other Examples**:
+  - *"What are the benefits of Medicare Advantage?"*
+  - *"How do I choose between Original Medicare and Medicare Advantage?"*
+  - *"What does Medicare cover?"*
+
+### **What Happens Next**
+1. Your question is converted to a vector embedding
+2. MongoDB Atlas Vector Search finds the most relevant document chunks
+3. The Bedrock agent generates a comprehensive answer using the retrieved context
+4. You receive a detailed, accurate response based on your knowledge base
 
 ## 🏗️ **Architecture Benefits**
 
@@ -86,12 +127,6 @@ Here's an example chunk from your `bedrock_db.test` collection:
 - Context-aware responses
 - Source attribution
 - Up-to-date information
-
-## 🚀 **Getting Started**
-
-1. **Setup Environment**: Follow the setup guide in `AGENTS.md`
-2. **Test Connection**: Verify MongoDB and AWS Bedrock connectivity
-3. **Run Demo**: Execute `python main.py` to test the integration
 
 ## 📚 **Additional Resources**
 

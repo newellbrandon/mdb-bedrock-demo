@@ -34,6 +34,30 @@ def print_info(message, color=Fore.BLUE):
     """Print an info message"""
     print(f"{color}ℹ {message}{Style.RESET_ALL}")
 
+def get_user_prompt():
+    """Get the prompt from user input"""
+    print_section_header("ENTER YOUR QUESTION", Fore.YELLOW)
+    print(f"{Fore.WHITE}Ask any question about your knowledge base:{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}Example: What are the benefits of Medicare Advantage?{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}Example: How do I choose between Original Medicare and Medicare Advantage?{Style.RESET_ALL}")
+    print()
+    
+    while True:
+        try:
+            prompt = input(f"{Fore.GREEN}Your question: {Style.RESET_ALL}").strip()
+            if prompt:
+                return prompt
+            else:
+                print_error("Please enter a question. Cannot be empty.")
+        except KeyboardInterrupt:
+            print("\n")
+            print_error("Operation cancelled by user.")
+            exit(0)
+        except EOFError:
+            print("\n")
+            print_error("Unexpected end of input.")
+            exit(1)
+
 def invoke_agent(client, agent_id, alias_id, prompt, session_id):
     """Invoke the AWS Bedrock agent and return the response"""
     print_info(f"Invoking Bedrock Agent: {agent_id}")
@@ -107,13 +131,13 @@ def main():
         print_error(f"Failed to initialize AWS client: {str(e)}")
         return
     
-    # Step 3: Prepare the query
-    print_step(3, "Preparing Query")
+    # Step 3: Get user prompt
+    print_step(3, "Getting User Question")
     
+    prompt = get_user_prompt()
     session_id = f"{DEFAULT_SESSION_ID}-{uuid.uuid4().hex[:8]}"
-    prompt = "Explain in the most simple terms what medicare saves me on a monthly basis?"
     
-    print_info(f"Query: {prompt}")
+    print_info(f"Question: {prompt}")
     print_info(f"Session ID: {session_id}")
     
     # Step 4: Invoke the agent
