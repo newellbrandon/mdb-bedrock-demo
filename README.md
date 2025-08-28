@@ -4,6 +4,8 @@
 
 This project demonstrates how **AWS Bedrock** leverages **MongoDB Atlas Vector Search** to provide intelligent, context-aware responses by semantically searching through document chunks stored in MongoDB.
 
+**This demo is based on the successful setup described in the [official MongoDB documentation for Amazon Bedrock integration](https://www.mongodb.com/docs/atlas/ai-integrations/amazon-bedrock/).**
+
 ## 🧠 **How It Works**
 
 ### 1. **Document Processing & Embedding Generation**
@@ -94,9 +96,10 @@ Here's an example chunk from your `bedrock_db.test` collection:
 ## 📚 **Additional Resources**
 
 - **AGENTS.md**: Complete development and troubleshooting guide
+- **[Official MongoDB Amazon Bedrock Integration Guide](https://www.mongodb.com/docs/atlas/ai-integrations/amazon-bedrock/)**: Complete setup and configuration documentation
 - **MongoDB Atlas Vector Search**: [Documentation](https://docs.atlas.mongodb.com/atlas-search/)
 - **AWS Bedrock**: [Documentation](https://docs.aws.amazon.com/bedrock/)
 
 ---
 
-*This demo showcases the power of combining AWS Bedrock's AI capabilities with MongoDB Atlas Vector Search for intelligent, context-aware information retrieval.*
+*This demo showcases the power of combining AWS Bedrock's AI capabilities with MongoDB Atlas Vector Search for intelligent, context-aware information retrieval. The setup follows the official MongoDB documentation for seamless integration between these powerful services.*
